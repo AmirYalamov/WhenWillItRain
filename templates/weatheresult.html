@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel = "stylesheet" type = "text/css" href="{{ url_for('static', filename = 'stylesheet.css')}}">
+    <link rel = "stylesheet" type = "text/css" href="{{ url_for('static', filename = 'weathericons.css')}}">
 </head>
 <body>
 
 {% for i, j in result.items() %}
 
-        <h1>You entered location {{j}}</h1>
+        <h2 style = "color: dimgrey; font-size: 40px">In {{j}}</h2>
+
+
+        <div class="sunny">
+        </div>
+
+        <h2>It is not raining now</h2>
+
+
+        <br/>
+        <h2 style = "color: black; font-size: 30px">It will rain next on Wednesday</h2>
 
 {% endfor %}
 
