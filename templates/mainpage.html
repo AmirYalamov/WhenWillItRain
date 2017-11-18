@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+</head>
+<body>
+    <!-- rain checkbox  -->
+    <form class="pure-form">
+    <label for="option-one" class="pure-checkbox">
+        <input id="option-one" type="checkbox" value="">
+        Rain
+    </label>
+    <!-- snow checkbox -->
+    <form class="pure-form">
+    <label for="option-one" class="pure-checkbox">
+        <input id="option-two" type="checkbox" value="">
+        Snow
+    </label>
+
+    <form class="pure-form" action = "http://localhost:5000/weatheresult" method = "POST">
+        <!-- search box -->
+        <p>When will it rain next in: <input type="text" name = "text-box" placeholder="Enter a location" required></p>
+        <!-- button -->
+        <button class="pure-button">Submit</button>
+    </form>
+
+</body>
+</html>
