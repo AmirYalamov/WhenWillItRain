@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='checkboxes.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='checkboxes.css') }}">
 </head>
 <body>
 
+<div style="text-align: center;">
   <form class="pure-form" action="http://localhost:5000/weatheresult" method="POST">
     <!-- ***rain checkbox***  -->
     <label for="option-one" class="pure-checkbox">
@@ -20,19 +21,11 @@
         Snow
     </label>
 
-<<<<<<< HEAD
-         <p>When will it rain next in: <input type = "text" name = "text-box" placeholder = "Enter location" /></p>
-         <p><input type = "submit" value = "submit" /></p>
-
-
-    </form>
-=======
     <!-- search box -->
     <p>When will it rain next in: <input type="text" name="text-box" placeholder="Enter a location"></p>
     <!-- button -->
     <button class="pure-button">Submit</button>
   </form>
->>>>>>> 48788f8f6a3c9c0782d7a1cc6528161493b8eb8d
 
 </body>
 </html>
