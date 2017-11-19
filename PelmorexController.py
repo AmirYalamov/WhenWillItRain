@@ -2,7 +2,7 @@ import requests
 import json
 
 
-def getLocationCode(location):
+def getLocationData(location):
     baseURL = getBaseURL() + "/search/string?keyword="
 
     finalURL = baseURL + location
