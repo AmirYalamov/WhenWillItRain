@@ -1,0 +1,10 @@
+.checkbox {
+  display: inline-block
+}
+
+[type="checkbox"]
+{
+    vertical-align:middle;
+}
+
+

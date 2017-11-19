@@ -2,8 +2,13 @@
 h2 {
 
     text-align: center;
-    color: grey;
+    color: white;
     font-family: "Roboto";
 
+}
+
+body {
+    background-size: cover;
+    background-image: url(http://files.all-free-download.com//downloadfiles/wallpapers/1600_1200/mountain_reflections_wallpaper_landscape_nature_1581.jpg);
 }
 

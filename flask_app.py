@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request
 
+import PelmorexInterpreter
+
 app = Flask(__name__)
+
+#loc = PelmorexInterpreter. nextPrecipToString()
 
 @app.route('/')
 def index():
@@ -10,7 +14,13 @@ def index():
 def weatheresult():
    if request.method == 'POST':
       result = request.form
-      return render_template("weatheresult.html",result=result)
+
+      for i, j in result.items():
+          s = j
+
+      loc = PelmorexInterpreter.nextPrecipToString(s)
+
+      return render_template("weatheresult.html",result=result, loc=loc)
 
 
 if __name__ == '__main__':
