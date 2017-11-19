@@ -19,22 +19,36 @@ def nextPrecipToString(location):
     if isinstance(precipStartStop, int) or isinstance(precipCurrent, int):
         return "An error occurred getting precipitation data: HTTP status code %d." % precipStartStop
 
-    start = -1
-    end = -1
+    startRain = -1
+    endRain = -1
 
     i = 0
 
     while i < 32:
         if float(precipStartStop["data"][i]["rain"]) != 0:
-            print("If #1: %d" % i)
-            start = i
-            j = i
-            while j < 32:
-                if float(precipStartStop["data"][j]["rain"]) == 0:
-                    print("If #2: %d" % j)
-                    end = j
+            startRain = i
+            while i < 32:
+                i += 1
+                if float(precipStartStop["data"][i]["rain"]) == 0:
+                    endRain = i
                     break
-                j += 1
+            break
+        i += 1
+
+    startSnow = -1
+    endSnow = -1
+
+    i = 0
+
+    while i < 32:
+        if float(precipStartStop["data"][i]["snow"]) != 0:
+            startSnow = i
+            while i < 32:
+                i += 1
+                if float(precipStartStop["data"][i]["snow"]) == 0:
+                    endSnow = i
+                    break
+            break
         i += 1
 
     isCurrentPrecipitation = True
@@ -44,8 +58,10 @@ def nextPrecipToString(location):
     if "[]" in eventsArrayStr:
         isCurrentPrecipitation = False
 
-    print(start)
-    print(end)
+    print(startRain)
+    print(endRain)
+    print(startSnow)
+    print(endSnow)
     print(isCurrentPrecipitation)
 
 
@@ -58,4 +74,4 @@ def getLocationCode(location):
     return locationData["dataCode"]
 
 
-nextPrecipToString("death%20valley")
+nextPrecipToString("london%20on")
