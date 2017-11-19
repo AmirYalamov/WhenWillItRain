@@ -25,17 +25,17 @@ def nextPrecipToString(location):
     i = 0
 
     while i < 32:
-        if precipStartStop["data"][i]["rain"] is not None or float(precipStartStop["data"][i]["rain"]) != 0:
+        if float(precipStartStop["data"][i]["rain"]) != 0:
+            print("If #1: %d" % i)
             start = i
             j = i
             while j < 32:
-                if precipStartStop["data"][j]["rain"] is None or float(precipStartStop["data"][j]["rain"]) == 0:
+                if float(precipStartStop["data"][j]["rain"]) == 0:
+                    print("If #2: %d" % j)
                     end = j
                     break
                 j += 1
-                continue
         i += 1
-        continue
 
     isCurrentPrecipitation = True
 
